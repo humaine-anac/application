@@ -5,7 +5,7 @@
     },
     "chat-ui": {
         "url": "https://github.com/humaine-anac/chat-ui",
-        "commit": "d0f288014935b5ebc64abde212fc3e3d0b3953db"
+        "commit": "af8f1c029034f5a30808db0e48a264d5728b3fe4"
     },
     "human-ui": {
         "url": "https://github.com/humaine-anac/human-ui",
