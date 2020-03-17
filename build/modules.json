@@ -9,7 +9,7 @@
     },
     "human-ui": {
         "url": "https://github.com/humaine-anac/human-ui",
-        "commit": "810e5326cbf6201c9b6ca2ed824ebed26906b96d"
+        "commit": "ddee0d8e7d4c8f98aac1e89a237b77e5dea81034"
     },
     "utility-generator": {
         "url": "https://github.com/humaine-anac/utility-generator",
