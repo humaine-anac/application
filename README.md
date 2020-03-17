@@ -11,5 +11,5 @@ npm install
 ## Usage
 
 ```bash
-node setup.js
+node generate.js
 ```
