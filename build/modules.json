@@ -1,0 +1,18 @@
+{
+    "environment-orchestrator": {
+        "url": "https://github.com/humaine-anac/environment-orchestrator",
+        "commit": "6e920fcfafe42243efe268492d43a7ca379f4877"
+    },
+    "chat-ui": {
+        "url": "https://github.com/humaine-anac/chat-ui",
+        "commit": "d0c34bc60cc2ace1008dc9b5ad4b217778697e17"
+    },
+    "human-ui": {
+        "url": "https://github.com/humaine-anac/human-ui",
+        "commit": "810e5326cbf6201c9b6ca2ed824ebed26906b96d"
+    },
+    "utility-generator": {
+        "url": "https://github.com/humaine-anac/utility-generator",
+        "commit": "c9ff92023c1b451c40650af6d173633906738d96"
+    }
+}
