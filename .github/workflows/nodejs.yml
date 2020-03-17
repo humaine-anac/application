@@ -26,3 +26,51 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm run build
+
+    - name: Get current date
+      id: date
+      run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@latest
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{steps.date.outputs.date}}-${{ github.ref }}
+        release_name: ${{steps.date.outputs.date}}-${{ github.ref }}
+        body: |
+          Date: ${{steps.date.outputs.date}}
+          Ref:  ${{github.ref}}
+        draft: false
+        prerelease: false
+
+    - name: Upload Release Asset - Linux
+      id: upload-release-asset-linux
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./dist/humaine-linux
+        asset_name: humaine-linux
+        asset_content_type: application/octet-stream
+    - name: Upload Release Asset - macOS
+      id: upload-release-asset-macos
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./dist/humaine-macos
+        asset_name: humaine-macos
+        asset_content_type: application/octet-stream
+    - name: Upload Release Asset - Windows
+      id: upload-release-asset-win
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./dist/humaine-win.exe
+        asset_name: humaine-win.exe
+        asset_content_type: application/octet-stream
