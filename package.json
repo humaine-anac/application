@@ -18,6 +18,7 @@
   "homepage": "https://github.com/humaine-anac/dinocrates#readme",
   "dependencies": {},
   "devDependencies": {
+    "github-api": "^3.3.0",
     "pkg": "^4.4.4"
   }
 }
