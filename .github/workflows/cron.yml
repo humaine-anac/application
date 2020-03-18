@@ -2,7 +2,7 @@ name: Cron Bump Commits
 
 on:
   schedule:
-    - cron:  '*/5 */1 * * *'
+    - cron:  '*/15 * * * *'
 
 jobs:
   build:
