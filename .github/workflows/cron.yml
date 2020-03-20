@@ -13,20 +13,26 @@ jobs:
         node-version: [12.x]
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.REPO_ACCESS_TOKEN }}
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
 
-    - run: node update.js
+    - name: Update commit hashes
+      run: node update.js
 
     - name: Commit files
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git commit -m "Update commit hashes" -a || :
+        git config --local user.email "matthew.peveler@gmail.com"
+        git config --local user.name "MasterOdinBot"
+        git commit -s -m "Update commit hashes" -a || :
+
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
