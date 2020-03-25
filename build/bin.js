@@ -5,7 +5,7 @@ const path = require('path');
 const processes = [];
 
 const base_dir = path.join(
-  (process.pkg) ? path.join('/snapshot', 'build') : __dirname,
+  (process.pkg) ? path.resolve('/snapshot', 'build') : __dirname,
   'modules'
 );
 
