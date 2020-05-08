@@ -1,7 +1,7 @@
 {
     "environment-orchestrator": {
         "url": "https://github.com/humaine-anac/environment-orchestrator",
-        "commit": "7fb4b09b3bf3dc6029b3bff969658dd7ee8c9909"
+        "commit": "bd2d7c097a51f5baffc36c1145cad0f3c10f650a"
     },
     "chat-ui": {
         "url": "https://github.com/humaine-anac/chat-ui",
